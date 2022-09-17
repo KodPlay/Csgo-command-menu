@@ -44,6 +44,7 @@ public Action:command_plus(client ,args )
 	AddMenuItem(menu, "9", "积分商店");
 	AddMenuItem(menu, "10", "死亡音效");
 	AddMenuItem(menu, "11", "MVP特效");
+	AddMenuItem(menu, "12", "MVP音乐");
 	SetMenuExitButton(menu, true);
 	bool:DisplayMenu(menu,client,100);
 }
@@ -56,7 +57,7 @@ public Action:command_diymenu(client , args)
 	AddMenuItem(menu, "3", "手套");
 	AddMenuItem(menu, "4", "等级");
 	AddMenuItem(menu, "5", "称号");
-	AddMenuItem(menu, "6", "商店");
+	AddMenuItem(menu, "6", "积分");
 	SetMenuExitButton(menu, true);
 	bool:DisplayMenu(menu,client,100);
 }
@@ -152,6 +153,10 @@ public plusHandler(Handle:menu, MenuAction:action, client, position)
 		else if(StrEqual(Item,"11"))
 		{
 			ClientCommand(client, "sm_mvpanel");
+		}
+				else if(StrEqual(Item,"12"))
+		{
+			ClientCommand(client, "sm_mvp");
 		}
 	}
 }
